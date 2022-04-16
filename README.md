@@ -1,2 +1,1 @@
-# webstoryboy
-study
+# webstoryboy.study
