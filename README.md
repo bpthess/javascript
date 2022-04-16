@@ -1,2 +1,2 @@
-# webstoryboy.study 24th 이태용
+#웹스 24기 이태용
  
