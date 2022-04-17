@@ -192,8 +192,7 @@ for (let i = 0; i < allMusic.length; i++) {
         let totalSec = Math.floor(duration % 60);
         if (totalSec < 10) {
             totalSec = `0${totalSec}`;
-        }
-        ;
+        };
         liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`;
         liAudioDuartionTag.setAttribute("t-duration", `${totalMin}:${totalSec}`); //adding t-duration attribute with total duration value
     });
