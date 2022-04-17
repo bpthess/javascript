@@ -312,5 +312,5 @@ ul li .audio-duration {
 
 ul li.playing {
     pointer-events: none;
-    color: var(--violet);
+    color: #3568ff;
 }
