@@ -101,6 +101,7 @@ body {
 
 .song-details {
     text-align: center;
+    height: 65px;
     margin: 30px 0;
 }
 
@@ -204,6 +205,13 @@ body {
     cursor: pointer;
     align-items: center;
     justify-content: center;
+}
+.play-pause::before{
+    position: absolute;
+    content: "";
+    height: 43px;
+    width: 43px;
+    border-radius: inherit;
 }
 
 .play-pause i {
