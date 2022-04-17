@@ -12,6 +12,30 @@ body {
     overflow: hidden;
 }
 
+
+.bg-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+}
+
+.bg-video:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.bg-video video {
+    width: 100%;
+}
+
 .game-text {
     display: none;
     justify-content: center;
@@ -27,29 +51,47 @@ body {
     font-size: 50px;
 }
 
+.game-text span {
+    margin-bottom: 5px;
+}
+
 .game-text button {
     padding: 0.5rem 1rem;
     color: #fff;
     background-color: crimson;
     cursor: pointer;
     border: none;
+    font-size: 20px;
 }
 
 .score {
     text-align: center;
     font-size: 36px;
     margin-bottom: 2rem;
+    color: #fff;
+    margin-top: -10px;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.playground {
+    margin-top: -10px;
 }
 
 .playground > ul {
     border: 1px solid #333;
-    width: 250px;
+    width: 300px;
     margin: 0 auto;
 }
 
 .playground > ul > li {
     width: 100%;
-    height: 25px;
+    height: 30px;
 }
 
 .playground > ul > li > ul {
@@ -57,13 +99,13 @@ body {
 }
 
 .playground > ul > li > ul > li {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     outline: 1px solid #ccc;
 }
 
 .tree {
-    background-color: #6723ea;
+    background-color: #8e44ad;
 }
 
 .bar {
@@ -71,7 +113,7 @@ body {
 }
 
 .zee {
-    background-color: green;
+    background-color: #e67e22;
 }
 
 .elLeft {
