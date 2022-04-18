@@ -89,3 +89,12 @@ function resetGame() {
 loadParagraph();
 inpField.addEventListener("input", initTyping);
 tryAgainBtn.addEventListener("click", resetGame);
+
+//jquery
+$(function(){
+    $('.start').click(function () {
+        $('.outer').addClass('active')
+        $('body').css("background-color", "#333")
+    })
+
+})
