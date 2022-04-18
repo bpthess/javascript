@@ -12,7 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: cornflowerblue;
+    background-color: #fff;
+    transition: 0.5s;
 }
 
 .wrapper {
@@ -20,6 +21,7 @@ body {
     padding: 35px;
     background-color: #fff;
     border-radius: 10px;
+    position: relative;
 }
 
 .wrapper .content-box {
@@ -27,40 +29,98 @@ body {
     border-radius: 10px;
     border: 1px solid #ccc;
 }
+
 .wrapper .input-field {
     z-index: 999;
     opacity: 0;
     position: absolute;
 }
+
+.outer {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 30000;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.outer.active {
+    display: none;
+}
+
+.outer h2 {
+    font-size: 50px;
+    color: #fff;
+}
+
+.outer p {
+    color: #fff;
+}
+
+.outer p.desc1 {
+}
+
+.outer p.desc2 {
+    border: 1px solid red;
+    padding: 5px 20px;
+}
+
+.outer button.start {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: cornflowerblue;
+    color: #fff;
+    z-index: 10;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.outer button.start:hover {
+    background-color: dodgerblue;
+    color: #fff;
+}
+
 .content-box .typing-text {
     max-height: 255px;
     overflow-Y: auto;
 }
+
 .typing-text::-webkit-scrollbar {
     width: 0;
 }
+
 .typing-text p {
     font-size: 21px;
     text-align: justify;
     letter-spacing: 1px;
     word-break: break-all;
 }
+
 .typing-text p span {
     position: relative;
 }
+
 .typing-text p span.correct {
-    color: #56964f;
+    color: cornflowerblue;
 }
 
 .typing-text p span.incorrect {
-    color:#cb3439;
-    background-color: #ff74a4;
+    color: crimson;
     outline: 1px solid #fff;
     border-radius: 4px;
 }
+
 .typing-text p span.active {
-    color: #17a2b8;
+    color: cornflowerblue;
 }
+
 .typing-text p span.active:before {
     content: '';
     position: absolute;
@@ -68,10 +128,11 @@ body {
     bottom: 0;
     width: 100px;
     height: 2px;
-    background-color: #17a2b8;
+    background-color: dodgerblue;
     opacity: 0;
     animation: blink 1s ease-in-out infinite;
 }
+
 @keyframes blink {
     50% {
         opacity: 1;
@@ -98,6 +159,7 @@ body {
     color: #fff;
     transition: transform 0.3s ease;
 }
+
 .content button.active {
     transform: scale(0.97);
 }
@@ -107,27 +169,33 @@ body {
     width: calc(100% - 140px);
     justify-content: space-between;
 }
+
 .result-details li {
     height: 22px;
     list-style: none;
     display: flex;
     align-items: center;
 }
+
 .result-details li:not(:first-child) {
     padding-left: 22px;
     border-left: 1px solid #ccc;
 }
+
 .result-details li p {
     font-size: 19px;
 }
+
 .result-details li span {
     display: block;
     font-size: 20px;
     margin-left: 10px;
 }
+
 .result-details li:not(:first-child) span {
 
 }
+
 .result-details li b {
     font-weight: 500;
 }

@@ -5,12 +5,18 @@
     <title>Typing Speed Test Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--  favicon  -->
-    <link rel="icon" type="image/png" href="/favicons/typing_ico.png">
+    <link rel="icon" href="/favicons/typing_ico.ico" type="image/x-icon">
     <!--  common : css  -->
     <link rel="stylesheet" href="css/typing.css">
 </head>
 <body>
 <div class="wrapper">
+    <div class="outer">
+        <h2>Typing Speed Test</h2>
+        <p class="desc1">English.ver</p>
+        <p class="desc2">What is your typing speed? Go beyond the speed limit.</p>
+        <button class="start">START</button>
+    </div>
     <input type="text" class="input-field">
     <div class="content-box">
         <div class="typing-text">
@@ -39,9 +45,16 @@
         </div>
     </div>
 </div>
+<!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!-- common : js -->
 <script src="js/paragraphs.js"></script>
 <script src="js/typingscript.js"></script>
-
+<script>
+    $('.start').click(function () {
+        $('.outer').addClass('active')
+        $('body').css("background-color", "#333")
+    })
+</script>
 </body>
 </html>
