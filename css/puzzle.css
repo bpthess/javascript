@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --facebook: #3b5998;
+    --white: #fff;
+}
+
+.wrap-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.play-time {
+    font-size: 3rem;
+    margin-top: 2rem;
+    color: var(--facebook);
+}
+
+ul {
+    list-style: none;
+    margin-top: 1rem;
+    border: 2px solid var(--facebook);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+li {
+    width: 100px;
+    height: 100px;
+    float: left;
+    background: url("http://placeimg.com/400/400/13");
+}
+
+.start-button {
+    background: var(--facebook);
+    padding: 1rem 2rem;
+    border: none;
+    margin-top: 1rem;
+    color: #fff;
+}
+
+.game-text {
+    position: absolute;
+    font-size: 45px;
+    color: #67c23a;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.list0 {
+    background-position-x: 0;
+    background-position-y: 0;
+}
+
+.list1 {
+    background-position-x: -100px;
+    background-position-y: 0;
+}
+
+.list2 {
+    background-position-x: -200px;
+    background-position-y: 0;
+}
+
+.list3 {
+    background-position-x: -300px;
+    background-position-y: 0;
+}
+
+.list4 {
+    background-position-x: 0;
+    background-position-y: -100px;
+}
+
+.list5 {
+    background-position-x: -100px;
+    background-position-y: -100px;
+}
+
+.list6 {
+    background-position-x: -200px;
+    background-position-y: -100px;
+}
+
+.list7 {
+    background-position-x: -300px;
+    background-position-y: -100px;
+}
+
+.list8 {
+    background-position-x: 0;
+    background-position-y: -100px;
+}
+
+.list9 {
+    background-position-x: -100px;
+    background-position-y: -200px;
+}
+
+.list10 {
+    background-position-x: -200px;
+    background-position-y: -200px;
+}
+
+.list11 {
+    background-position-x: -300px;
+    background-position-y: -200px;
+}
+
+.list12 {
+    background-position-x: 0;
+    background-position-y: -300px;
+}
+
+.list13 {
+    background-position-x: -100px;
+    background-position-y: -300px;
+}
+
+.list14 {
+    background-position-x: -200px;
+    background-position-y: -300px;
+}
+
+.list3 {
+    background-position-x: -300px;
+    background-position-y: -300px;
+}
