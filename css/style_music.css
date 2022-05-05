@@ -12,7 +12,8 @@
     font-family: 'GmarketSansMedium';
 }
 
-*::before, *::after {
+*::before,
+*::after {
     padding: 0;
     margin: 0;
 }
@@ -27,8 +28,7 @@
     --lightbshadow: rgba(0, 0, 0, 0.15);
 }
 
-body {
-}
+body {}
 
 .container {
     position: relative;
@@ -36,7 +36,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #3568FF;
+    background-color: #000;
 }
 
 
@@ -48,14 +48,18 @@ body {
     position: relative;
     border-radius: 50px;
     background: var(--white);
+    box-shadow: 0 0 10px #fff;
 }
 
 .wrapper i {
     cursor: pointer;
 }
 
-.top-bar, .progress-area .song-timer,
-.controls, .music-list .header, .music-list ul li {
+.top-bar,
+.progress-area .song-timer,
+.controls,
+.music-list .header,
+.music-list ul li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -194,7 +198,8 @@ body {
     right: 32%;
 }
 
-#prev, #next {
+#prev,
+#next {
     font-size: 43px;
 }
 
@@ -206,7 +211,8 @@ body {
     align-items: center;
     justify-content: center;
 }
-.play-pause::before{
+
+.play-pause::before {
     position: absolute;
     content: "";
     height: 43px;
@@ -215,8 +221,6 @@ body {
 }
 
 .play-pause i {
-    height: 43px;
-    width: 43px;
     line-height: 43px;
     font-size: 50px;
     text-align: center;
@@ -228,8 +232,7 @@ body {
     margin-left: -3px;
 }
 
-.heart-area {
-}
+.heart-area {}
 
 input[type="checkbox"] {
     display: none;
