@@ -11,22 +11,10 @@
 
 let allMusic = [
     {
-        name: "축하해 (Prod. By VAN.C)",
-        artist: "오반",
-        img: "music-1",
-        src: "music-1"
-    },
-    {
         name: "Down",
         artist: "Marian Hill",
         img: "music-2",
         src: "music-2"
-    },
-    {
-        name: "Baby I Need You",
-        artist: "잔나비",
-        img: "music-3",
-        src: "music-3"
     },
     {
         name: "Beautiful Mistakes",
@@ -39,12 +27,6 @@ let allMusic = [
         artist: "Alexander Jean",
         img: "music-5",
         src: "music-5"
-    },
-    {
-        name: "Positions",
-        artist: "Ariana Grande",
-        img: "music-6",
-        src: "music-6"
     },
     {
         name: "Sweatshirt",
