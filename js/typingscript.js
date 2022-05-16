@@ -94,7 +94,7 @@ tryAgainBtn.addEventListener("click", resetGame);
 $(function(){
     $('.start').click(function () {
         $('.outer').addClass('active')
-        $('body').css("background-color", "#333")
+        $('body').css("background-color", "#000")
     })
 
 })

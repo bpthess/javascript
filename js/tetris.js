@@ -1,12 +1,15 @@
-import BLOCKS from "./blocks.js";
+import BLOCKS from "./blocks.js"
 
 //DOM
 const playground = document.querySelector(".playground > ul");
 const gameText = document.querySelector(".game-text");
 const scoreDisplay = document.querySelector(".score");
+const outer = document.querySelector(".outer");
+const game = document.querySelector(".game");
+const startButton = document.querySelector(".outer .start");
 const restartButton = document.querySelector(".game-text > button");
 
-//Setting
+//Seting
 const GAME_ROWS = 20;
 const GAME_COLS = 10;
 
@@ -18,21 +21,24 @@ let tempMovingItem;
 
 const movingItem = {
     type: "",
-    direction: 0,
+    direction: 3,
     top: 5,
     left: 3,
-}
+};
+
+init();
 
 //functions
 function init() {
-    tempMovingItem = {...movingItem};
+    tempMovingItem = {
+        ...movingItem
+    };
+
     for (let i = 0; i < GAME_ROWS; i++) {
         prependNewLine();
     }
     generateNewBlock();
 }
-
-init();
 
 function prependNewLine() {
     const li = document.createElement("li");
@@ -41,17 +47,21 @@ function prependNewLine() {
         const matrix = document.createElement("li");
         ul.prepend(matrix);
     }
-    li.prepend(ul)
-    playground.prepend(li)
+    li.prepend(ul);
+    playground.prepend(li);
 }
 
 function renderBlocks(moveType = "") {
-    const {type, direction, top, left} = tempMovingItem;
+    const {
+        type,
+        direction,
+        top,
+        left
+    } = tempMovingItem;
     const movingBlocks = document.querySelectorAll(".moving");
     movingBlocks.forEach(moving => {
         moving.classList.remove(type, "moving");
-    })
-    console.log(type, direction, top, left);
+    });
     BLOCKS[type][direction].some(block => {
         const x = block[0] + left;
         const y = block[1] + top;
@@ -60,21 +70,22 @@ function renderBlocks(moveType = "") {
         if (isAvailable) {
             target.classList.add(type, "moving");
         } else {
-            tempMovingItem = {...movingItem}
-            if(moveType === 'retry'){
+            tempMovingItem = {
+                ...movingItem
+            };
+            if (moveType === "retry") {
                 clearInterval(downInterval);
                 showGameoverText();
             }
             setTimeout(() => {
-                renderBlocks('retry');
+                renderBlocks("retry");
                 if (moveType === "top") {
                     seizeBlock();
                 }
-            }, 0)
-            // renderBlocks();
+            }, 0);
             return true;
         }
-    })
+    });
     movingItem.left = left;
     movingItem.top = top;
     movingItem.direction = direction;
@@ -85,45 +96,46 @@ function seizeBlock() {
     movingBlocks.forEach(moving => {
         moving.classList.remove("moving");
         moving.classList.add("seized");
-    })
-    checkMatch()
+    });
+    checkMatch();
 }
-function checkMatch(){
 
+function checkMatch() {
     const childNodes = playground.childNodes;
-    childNodes.forEach(child=>{
+    childNodes.forEach(child => {
         let matched = true;
-        child.children[0].childNodes.forEach(li=>{
-            if(!li.classList.contains("seized")){
+        child.children[0].childNodes.forEach(li => {
+            if (!li.classList.contains("seized")) {
                 matched = false;
             }
-        })
-        if(matched){
+        });
+        if (matched) {
             child.remove();
             prependNewLine();
             score++;
-            scoreDisplay.innerHTML = score;
+            scoreDisplay.innerText = score;
         }
-    })
-    generateNewBlock()
+    });
+
+    generateNewBlock();
 }
 
 function generateNewBlock() {
-
     clearInterval(downInterval);
-    downInterval = setInterval(()=> {
-        moveBlock("top", 1)
+    downInterval = setInterval(() => {
+        moveBlock("top", 1);
     }, duration);
 
     const blockArray = Object.entries(BLOCKS);
     const randomIndex = Math.floor(Math.random() * blockArray.length);
-
     movingItem.type = blockArray[randomIndex][0];
     movingItem.top = 0;
     movingItem.left = 3;
     movingItem.direction = 0;
-    tempMovingItem = {...movingItem};
-    renderBlocks()
+    tempMovingItem = {
+        ...movingItem
+    };
+    renderBlocks();
 }
 
 function checkEmpty(target) {
@@ -140,17 +152,18 @@ function moveBlock(moveType, amount) {
 
 function changeDirection() {
     const direction = tempMovingItem.direction;
-    direction === 3 ? tempMovingItem.direction = 0 : tempMovingItem.direction += 1;
+    direction === 3 ? (tempMovingItem.direction = 0) : (tempMovingItem.direction += 1);
     renderBlocks();
 }
-function dropBlock(){
+
+function dropBlock() {
     clearInterval(downInterval);
-    downInterval = setInterval(()=>{
+    downInterval = setInterval(() => {
         moveBlock("top", 1);
-    }, 10)
+    }, 10);
 }
 
-function showGameoverText(){
+function showGameoverText() {
     gameText.style.display = "flex";
 }
 
@@ -170,16 +183,22 @@ document.addEventListener("keydown", e => {
             changeDirection();
             break;
         case 32:
-            dropBlock()
+            dropBlock();
             break;
         default:
             break;
     }
-    console.log(e)
-})
+});
 
-restartButton.addEventListener("click", ()=>{
+startButton.addEventListener("click", () => {
+    playground.innerHTML = "";
+    outer.style.display = "none";
+    game.style.display = "block";
+    init();
+});
+
+restartButton.addEventListener("click", () => {
     playground.innerHTML = "";
     gameText.style.display = "none";
     init();
-})
+});

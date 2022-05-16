@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tetris Game</title>
     <!--  favicon  -->
@@ -12,20 +12,27 @@
     <link rel="stylesheet" href="css/tetris.css">
 </head>
 <body>
-<div class="wrapper">
-    <div class="bg-video">
-        <video src="videos/tetris_vd_01.mp4" autoplay muted loop></video>
+    <div class="outer">
+        <h2>TETRIS GAME</h2>
+        <button class="start">START</button>
     </div>
-    <div class="game-text">
-        <span>게임종료</span>
-        <button>다시시작</button>
+    <div class="wrapper">
+        <div class="bg-video">
+            <video src="videos/tetris_vd_01.mp4" autoplay muted loop></video>
+        </div>
+        <div class="game">
+            <div class="game-text">
+                <span>게임종료</span>
+                <button>다시시작</button>
+            </div>
+            <div class="score">0</div>
+            <div class="playground">
+                <ul></ul>
+            </div>
+        </div>
     </div>
-    <div class="score">0</div>
-    <div class="playground">
-        <ul></ul>
-    </div>
-</div>
-<!-- common : js -->
-<script src="js/tetris.js" type="module"></script>zz
+    <!-- common : js -->
+    <script src="js/tetris.js" type="module"></script>
 </body>
+
 </html>
