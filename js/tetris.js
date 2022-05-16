@@ -194,6 +194,7 @@ startButton.addEventListener("click", () => {
     playground.innerHTML = "";
     outer.style.display = "none";
     game.style.display = "block";
+    gameText.style.display = "none";
     init();
 });
 
